@@ -86,3 +86,17 @@ Route::get('/Category', function () {
 Route::get('/filter', function () {
     return view('filter');
 });
+
+
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+
+Route::get('/blog-details', function () {
+    return view('blog-details');
+});
+
+Route::get('/CHome', function () {
+    return view('CHome');
+});

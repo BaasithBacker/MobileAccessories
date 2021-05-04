@@ -5,7 +5,7 @@
 
 <body>
 
-<h5>welcome {{session('sname')->name}}, </h5>
+ 
 
     <!--? Preloader Start -->
     <div id="preloader-active">
@@ -91,7 +91,7 @@
                                     <div class="popular-img">
                                         <img src="assets/img/gallery/popular1.png" alt="">
                                         <div class="img-cap">
-                                            <span>Add to cart</span>
+                                            <span><a href='/cart'>Add to cart</a></span>
                                         </div>
                                         <div class="favorit-items">
                                             <span class="flaticon-heart"></span>
@@ -108,7 +108,7 @@
                                     <div class="popular-img">
                                         <img src="assets/img/gallery/popular2.png" alt="">
                                         <div class="img-cap">
-                                            <span>Add to cart</span>
+                                            <span><a href='/cart'>Add to cart</a></span>
                                         </div>
                                         <div class="favorit-items">
                                             <span class="flaticon-heart"></span>

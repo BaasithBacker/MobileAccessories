@@ -50,7 +50,7 @@
                                             <li><a href="/product_details"> Product Details</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.html">Blog</a>
+                                    <li><a href="/blog">Blog</a>    
                                         <ul class="submenu">
                                             <li><a href="/blog">Blog</a></li>
                                             <li><a href="/blog-details">Blog Details</a></li>
@@ -60,7 +60,7 @@
                                         <ul class="submenu">
                                             <li><a href="/Login">Login</a></li>
                                             <li><a href="/cart">Cart</a></li>
-                                            <li><a href="/elements">Element</a></li>
+                                           
                                             <li><a href="/confirmation">Confirmation</a></li>
                                             <li><a href="/checkout">Product Checkout</a></li>
                                         </ul>
@@ -124,10 +124,10 @@
                             <div class="footer-tittle">
                                 <h4>New Products</h4>
                                 <ul>
-                                    <li><a href="#">Woman Cloth</a></li>
-                                    <li><a href="#">Fashion Accessories</a></li>
-                                    <li><a href="#"> Man Accessories</a></li>
-                                    <li><a href="#"> Rubber made Toys</a></li>
+                                    <li><a href="#">Screen Protectors</a></li>
+                                    <li><a href="#">Color Cases</a></li>
+                                    <li><a href="#"> Silicon Cases</a></li>
+                                    <li><a href="#"> Rubber Cases</a></li>
                                 </ul>
                             </div>
                         </div>

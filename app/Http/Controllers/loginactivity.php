@@ -43,8 +43,8 @@ class loginactivity extends Controller
                 {
                     $i=login::select('name')->where('email','like',"$uname")->first();
                     $request->session()->put('sname',$i);
-                   echo "logined";
-                   return redirect ('/shop');
+                   //echo "logined";
+                   return redirect ('/CHome');
                 }
                 else if($ut->usertype=='admin')
                 {

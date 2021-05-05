@@ -53,18 +53,22 @@
                                 <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="name" name="name" value=""
                                             placeholder="Name">
+                                            <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="email" name="email" value=""
                                             placeholder="Email">
+                                            <span style="color:red" >@error('email') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
                                         <input type="password" class="form-control" id="password" name="password" value=""
                                             placeholder="Password">
+                                            <span style="color:red" >@error('password') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
                                         <input type="password" class="form-control" id="cpassword" name="confirmpassword" value=""
                                             placeholder="ConfirmPassword">
+                                            <span style="color:red" >@error('confirmpassword') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group">
                                        

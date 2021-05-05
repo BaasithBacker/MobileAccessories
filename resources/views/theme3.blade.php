@@ -41,20 +41,26 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="/AHome">Home</a></li>
-                                    
-                                    
+                                    <li><a href="/CHome">Home</a></li>
+                                    <li><a href="/shop">shop</a></li>
                                    
-                                    <li><a href="#">Action</a>    
+                                    <li class="hot"><a href="#">Latest</a>
                                         <ul class="submenu">
-                                            <li><a href="/ACategory">Add Category</a></li>
-                                            <li><a href="/ABrand">Add Brand</a></li>
-                                            <li><a href="/AItem">Add Item</a></li>
+                                            <li><a href="/shop"> Product list</a></li>
+                                            <li><a href="/product_details"> Product Details</a></li>
+                                        </ul>
+                                    </li>
+                                  
+                                    <li><a href="#">Pages</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Logout</a></li>
+                                            <li><a href="/cart">Cart</a></li>
+                                           
+                                            <li><a href="/confirmation">Confirmation</a></li>
+                                            <li><a href="/checkout">Product Checkout</a></li>
                                         </ul>
                                     </li>
                                     
-                                    <li><a href="#">View customer</a></li>
-
                                 </ul>
                             </nav>
                         </div>
@@ -67,7 +73,7 @@
                                     </div>
                                 </li>
                                 <li> <a href="/Login"><span class="flaticon-user"></span></a></li>
-                                
+                                <li><a href="/cart"><span class="flaticon-shopping-cart"></span></a> </li>
                             </ul>
                         </div>
                     </div>

@@ -54,10 +54,12 @@
                                     <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="name" name="name" value=""
                                             placeholder="Email">
+                                            <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
                                         <input type="password" class="form-control" id="password" name="password" value=""
                                             placeholder="Password">
+                                            <span style="color:red" >@error('password') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group">
                                         <div class="creat_account d-flex align-items-center">

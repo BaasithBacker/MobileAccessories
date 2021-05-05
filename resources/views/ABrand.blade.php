@@ -58,11 +58,10 @@
                                 <div class="col-md-12 form-group p_star" style='max-width:40%'>
                                 
                                 <div class="box-select">
-                                
+                                <label class="form-control">Category:</label>
                                 <select name="select" id="select">
                                  <option value="Mobilecases">Mobile Cases</option>
                                 <option value="Glass">ScreenProtectors</option>
-                                
                                  </select>
                                  </div>  
                                    

@@ -54,16 +54,26 @@
                                
 
                                 <div class="col-md-12 form-group p_star">
-                                <!-- <td>Category</td>
+                                <label class="form-control">Category:</label>
                                 <div class="box-select">
+                               
                                 <select name="select" id="select">
                                  <option value="Mobilecases">Mobile Cases</option>
-                                <option value="Glass">ScreenProtectors</option>  
+                                <option value="Glass">ScreenProtectors</option>  </select>
                                  </div>
-                                </div> -->
+                                </div>
+
 
                                 
-                    
+                                <div class="col-md-12 form-group p_star">
+                                <label class="form-control">Brand:</label>
+                                <div class="box-select">
+                                <select name="select1" id="select1">
+                                 <option value="Mobilecases">Mobile Cases</option>
+                                <option value="Glass">ScreenProtectors</option>  </select>
+                                 </div>
+                                </div>
+
                                                                 
                                         <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="name" name="name" value=""
@@ -98,9 +108,12 @@
                                             placeholder="Item-CostPrice">
                                     </div>
 
+                                    <div class="mb-3 form-group p_star">
+                                    <label for="formFile" class="form-control">Choose Item Image</label>
+                                    <input class="form-control" type="file" id="formFile">
                                     </div>
-                                    <div class="col-md-12 form-group">
-                                      
+                                   
+                                    <div class="col-md-12 form-group p_star">
                                         <button type="submit" value="submit" class="btn_3">
                                             Add
                                         </button>
@@ -115,7 +128,7 @@
           
         </section>
         <!--================login_part end =================-->
-     
+
     </main>
 
     @endsection

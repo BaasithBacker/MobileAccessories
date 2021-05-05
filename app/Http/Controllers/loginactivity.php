@@ -18,9 +18,15 @@ class loginactivity extends Controller
     {
         $uname=request('name');
         $upass=request('password');
-        //$name=$request->input();
-        // $request->session()->put('sname',$getmail);
-        // echo session('sname');
+      
+
+        $this->validate($request,[
+            'name'=>'required',
+            'password'=>'required|min:5|max:15'
+        ]);
+
+
+
         $u=login::select('email')->where('email','like',"$uname")->first();
         
         if(!$u)
@@ -48,10 +54,10 @@ class loginactivity extends Controller
                 }
                 else if($ut->usertype=='admin')
                 {
-                    echo "admin";
-                    // $i=faculty::select('id')->where('mailid','like',"$getmail")->first();
+                    //echo "admin";
+                    $i=login::select('name')->where('email','like',"$uname")->first();
                     // echo $i;
-                   // return redirect('#');
+                    return redirect('/AHome');
                 
                 }
                 }
@@ -91,6 +97,14 @@ class loginactivity extends Controller
         $uemail = request('email');
         $upass = request('password');
         $ucpass = request('confirmpassword');
+        
+        
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=>'required|email',
+            'password'=>'required|min:5|max:15',
+            'confirmpassword'=>'required|min:5|max:15']);
+
 
         //echo "added successfully";
         $l = new login();

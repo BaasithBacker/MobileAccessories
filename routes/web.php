@@ -122,3 +122,16 @@ Route::get('/ABrand', function () {
 Route::get('/AItem', function () {
     return view('AItem');
 });
+
+Route::get('/sessiondelete',function(){
+    if(session()->has('sname'))
+    {
+        session()->pull('sname');
+    }
+    return view('/index');
+});
+
+
+Route::get('/index', function () {
+    return view('index');
+});

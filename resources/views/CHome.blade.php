@@ -1,6 +1,6 @@
 
 
-@extends('theme')
+@extends('theme3')
 
 
 
@@ -9,6 +9,7 @@
 
 
 <body>
+<h5>welcome {{session('sname')->name}}, </h5> 
     <!--? Preloader Start -->
     
     <!-- Preloader Start -->
@@ -29,14 +30,13 @@
    
         <!-- ? New Product Start -->
         <main>
-      <h5>welcome {{session('sname')->name}}, </h5>
         <div class="slider-area ">
             <div class="single-slider slider-height2 d-flex align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Home</h2>
+                                <h2>Customer Home</h2>
                             </div>
                         </div>
                     </div>
@@ -235,11 +235,13 @@
                     </div>
                 </div>
                 <!-- Button -->
+                
                 <div class="row justify-content-center">
                     <div class="room-btn pt-70">
-                        <a href="catagori.html" class="btn view-btn1">View More Products</a>
+                        <a href="#" class="btn view-btn1">View More Products</a>
                     </div>
                 </div>
+               
             </div>
         </div>
         <!-- Popular Items End -->

@@ -31,8 +31,7 @@ class loginactivity extends Controller
         
         if(!$u)
         {
-            echo "invalid user";
-          return redirect('/Login');
+            echo "<script>alert('Something went Wrong,Invalid User');window.location='/Login';</script>";
         }
         else
         {
@@ -50,7 +49,7 @@ class loginactivity extends Controller
                     $i=login::select('name')->where('email','like',"$uname")->first();
                     $request->session()->put('sname',$i);
                    //echo "logined";
-                   return redirect ('/CHome');
+                   echo "<script>alert('Successfully Logined,Welcome');window.location='/CHome';</script>"; 
                 }
                 else if($ut->usertype=='admin')
                 {
@@ -63,8 +62,7 @@ class loginactivity extends Controller
                 }
              else
             {
-                echo "invlaid user";
-                return redirect('/Login');
+                echo "<script>alert('Something went Wrong,Invalid User');window.location='/Login';</script>";
             }
         }
     }
@@ -106,16 +104,26 @@ class loginactivity extends Controller
             'confirmpassword'=>'required|min:5|max:15']);
 
 
+            if($upass == $ucpass)
+            {
+                $l = new login();
+
+                $l->name=$uname;
+                $l->email=$uemail;
+                $l->password=$upass;
+                $l->usertype="customer";
+
+                $l->save();
+                return redirect('/Login');
+                }
+                 else
+                 {
+                echo "<script>alert('Password is not correct');window.location='/Register';</script>"; 
+                }
+
+
         //echo "added successfully";
-        $l = new login();
-
-        $l->name=$uname;
-        $l->email=$uemail;
-        $l->password=$upass;
-        $l->usertype="customer";
-
-        $l->save();
-        return redirect('/shop');
+        
 
     }
 

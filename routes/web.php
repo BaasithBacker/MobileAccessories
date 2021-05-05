@@ -100,3 +100,25 @@ Route::get('/blog-details', function () {
 Route::get('/CHome', function () {
     return view('CHome');
 });
+
+Route::get('/AHome', function () {
+    return view('AHome');
+});
+
+
+Route::get('/theme2', function () {
+    return view('theme2');
+});
+
+Route::get('/ACategory', function () {
+    return view('ACategory');
+});
+
+
+Route::get('/ABrand', function () {
+    return view('ABrand');
+});
+
+Route::get('/AItem', function () {
+    return view('AItem');
+});

@@ -81,6 +81,10 @@
                         </form>
                     </div>
                 </div>
+
+
+
+
                 <!-- Nav Card -->
                 <div class="tab-content" id="nav-tabContent">
                     <!-- card one -->
@@ -408,6 +412,7 @@
                 <!-- End Nav Card -->
             </div>
         </section>
+        
         <!-- Latest Products End -->
         <!--? Shop Method Start-->
         <div class="shop-method-area">

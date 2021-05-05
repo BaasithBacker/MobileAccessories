@@ -51,15 +51,17 @@
                     >
                                 <h3>Welcome Back Admin! <br>
                                     Add Category,  </h3>
-                                <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                                <form class="row contact_form" action="/ACategory1" method="post" novalidate="novalidate">
                                 {{csrf_field()}}
                                     <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="name" name="name" value=""
                                             placeholder="Category-Name">
+                                            <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="password" name="desc" value=""
+                                        <input type="text" class="form-control" id="password" name="desc" value=""
                                             placeholder="Description">
+                                            <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group">
                                       

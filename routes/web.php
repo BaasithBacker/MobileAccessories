@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginactivity;
+use App\Http\Controllers\admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -113,6 +114,8 @@ Route::get('/theme2', function () {
 Route::get('/ACategory', function () {
     return view('ACategory');
 });
+
+Route::post('/ACategory1',[admin::class,'store']);
 
 
 Route::get('/ABrand', function () {

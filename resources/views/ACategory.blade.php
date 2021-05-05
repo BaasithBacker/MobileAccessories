@@ -59,7 +59,7 @@
                                             <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="password" name="desc" value=""
+                                        <input type="text" class="form-control" id="desc" name="desc" value=""
                                             placeholder="Description">
                                             <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                     </div>

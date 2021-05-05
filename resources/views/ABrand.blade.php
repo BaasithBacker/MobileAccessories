@@ -72,7 +72,7 @@
                                             placeholder="Brand-Name">
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="password" name="desc" value=""
+                                        <input type="text" class="form-control" id="desc" name="desc" value=""
                                             placeholder="Description">
                                     </div>
                                     <div class="col-md-12 form-group">

@@ -59,7 +59,7 @@
                                 <label class="form-control">Category:</label>
                                 <div class="box-select">
                                
-                                <select name="select" id="select" onchange="getbrand()" >
+                                <select name="select" id="select" onchange="" >
                                 @foreach($categorydata as $c)
                                  <option value={{$c->id}}>{{$c->name}} </option>
                                 @endforeach  
@@ -67,13 +67,8 @@
                                  </div>
                                 </div>
 
-                                <!-- <button class="btn btn-primary">
-                                onclick="index1()"
-                                
-                                </button> -->
                                
-                                <input type="text" class="form-control" id="csrf" name="name" value='@csrf'
-                                            placeholder="Item-Name" hidden>
+                                
                  
 
                                    
@@ -81,28 +76,12 @@
                                 <div class="col-md-12 form-group p_star">
                                 <label class="form-control">Brand:</label>
                                 <div class="box-select">
-                                <select name="brand" id="brand" >
-                             
+                                <select name="brand1" id="brand1" >
+                                 
                                 </select> 
                            
                                 <script>
                                     
-
-                                // function getbrand(){
-                                //     var xhr=new XMLHttpRequest();
-                                //     var csrf=document.getElementById('csrf').value;
-                                //     var f=new FormData();
-                                //     f.append('X-CSRF-TOKEN','basith');
-                                    
-                                //     xhr.open('get','/getbrand');
-                                //     xhr.send(f);
-                                //     xhr.addEventListener('load',function(event){
-                                //         console.log(event.target.responseText);
-                                //         document.getElementById('brand').value=(event.target.responseText);
-                                //     });
-                                // }
-                            
-                            //  
                            
                             $( document ).ready(function() {
                                 var data = {
@@ -110,11 +89,30 @@
                                 type:'GET',
                                 success:function(result){
                                     var array = [];
-                                    array.push(result);
+                                    array=(result);
                                     console.log( array );
                                     console.log(array.length);
+                                    typeof(array);
+                                    var data=JSON.stringify(result);
+                                    console.log(data);
+                                    var obj=JSON.parse(result);
+                                    console.log(obj.length);
+                                    var len=obj.length;
+                                    var select = $("#brand1");
+                                    select.empty();
+                                    select.css("display:block");
+                                    var i=0;
+                                    for(i=0; i<len; i++)
+                                    {
+                            
+                                        console.log(obj[i].bname);
+                                        
+                                        // $('#brand1').html("<option>"+obj[i].bname+"</option>");
+                            
+                                        select.append($("<option />").val(obj[i].id).text(obj[i].bname));
+                                        console.log(select);
+                                    }
                                     alert('alerted'+result);
-                                    $('#brand').append(data);
                                 }
                             }   
                             $.ajax(data);

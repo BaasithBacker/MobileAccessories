@@ -18,21 +18,7 @@ class admin extends Controller
     {
         $brand = brand::all();
         echo $brand;
-        // $count=0;
-        // foreach($brand as $b)
-        // {
-        // $count=$count+1;
-        // }
-        
-        // $str="";
-
-        // for($i=0; $i<$count; $i++)
-        // {
-        //  $str .= "<option value='".$brand[$i]['id']."'>".$brand[$i]['bname']."</option> ";
-    
-        // }
-        // echo $str;
-        
+   
     }
 
 

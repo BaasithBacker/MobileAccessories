@@ -48,7 +48,7 @@
                                     <li><a href="#">Action</a>    
                                         <ul class="submenu">
                                             <li><a href="/ACategory">Add Category</a></li>
-                                            <li><a href="/ABrand2">Add Brand</a></li>
+                                            <li><a href="/ABrand">Add Brand</a></li>
                                             <li><a href="/AItem2">Add Item</a></li>
                                         </ul>
                                     </li>

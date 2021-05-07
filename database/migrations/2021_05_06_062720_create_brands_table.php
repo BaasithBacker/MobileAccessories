@@ -15,8 +15,6 @@ class CreateBrandsTable extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cid');
-            $table->foreign('cid')->references('id')->on('categories')->onUpdate('cascade')->OnDelete('cascade');
             $table->string('bname');
             $table->string('desc');
             $table->timestamps();

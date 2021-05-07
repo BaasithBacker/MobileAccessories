@@ -7,6 +7,8 @@ use App\Models\category;
 use App\Models\brand;
 use App\Models\item;
 
+
+
 class admin extends Controller
 {
     /**
@@ -14,27 +16,28 @@ class admin extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getbrand(Request $req)
-    {
-        $brand = brand::all();
-        echo $brand;
+    // public function getbrand(Request $req)
+    // {
+    //     $brand = brand::all();
+    //     echo $brand;
    
-    }
+    // }
 
 
     public function index()
     {
         $categorydata = category::all();
-        return view ('ABrand',compact('categorydata'));
+        $brand = brand::all();
+        return view ('AItem',compact('categorydata','brand'));
     }
 
 
-    public function index1()
-    {
+    // public function index1()
+    // {
 
-        $categorydata = category::all();
-        return view ('AItem',compact('categorydata'));
-    }
+    //     $categorydata = category::all();
+    //     return view ('AItem',compact('categorydata'));
+    // }
     
 
 
@@ -85,12 +88,13 @@ class admin extends Controller
     public function store1(Request $request)
     {
         $data=$request->input();
-       print_r($data);
+    //    print_r($data);
+       
        
         
         $cname=$data['name'];
         $desc=$data['desc'];
-        $cid=$data['select'];
+        // $cid=$data['select'];
        
         $this->validate($request,[
             'name'=>'required',
@@ -99,7 +103,7 @@ class admin extends Controller
 
         $c = new brand();
 
-        $c->cid=$cid;
+        // $c->cid=$cid;
         $c->bname=$cname;
         $c->desc=$desc;
 
@@ -110,6 +114,41 @@ class admin extends Controller
 
     }
 
+    public function storeitem(Request $req)
+    {
+        $data=$req->input();
+        // print_r($data);
+        // print_r($req->image);
+
+        // $image=$req->image;
+        // $img = Image::make($image)->resize(240, 253);
+        // print_r($img);
+
+        $cid=$data['select'];
+        $bid=$data['brand1'];
+        $iname=$data['name'];
+        $isize=$data['size'];
+        $icolor=$data['color'];
+        $idesc=$data['desc'];
+        $istock=$data['stock'];
+        $isprice=$data['sprice'];
+        $icprice=$data['cprice'];
+
+        $c = new item();
+
+        $c->cid=$cid;
+        $c->bid=$bid;
+        $c->iname=$iname;
+        $c->isize=$isize;
+        $c->icolor=$icolor;
+        $c->idesc=$idesc;
+        $c->istock=$istock;
+        $c->isprice=$isprice;
+        $c->icprice=$icprice;
+        echo "<script>alert('Successfully Added Item');window.location='/AHome';</script>";
+
+        $c->save();
+    }
 
 
 

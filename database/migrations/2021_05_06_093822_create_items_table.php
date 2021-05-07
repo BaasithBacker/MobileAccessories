@@ -26,6 +26,7 @@ class CreateItemsTable extends Migration
             $table->string('istock');
             $table->string('isprice');
             $table->string('icprice');
+            // $table->string('image');
             $table->timestamps();
         });
     }

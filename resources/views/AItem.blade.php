@@ -51,7 +51,7 @@
                                 <h3>Welcome Back Admin! <br>
                                     Add Item,  </h3>
                                     
-                                <form class="row contact_form" action="" method="post" novalidate="novalidate">
+                                <form class="row contact_form" action="/storeitem" method="post" novalidate="novalidate" enctype="multipart/form-data">
                                 {{csrf_field()}}
                                
 
@@ -67,63 +67,14 @@
                                  </div>
                                 </div>
 
-                               
-                                
-                 
-
-                                   
-
                                 <div class="col-md-12 form-group p_star">
                                 <label class="form-control">Brand:</label>
                                 <div class="box-select">
                                 <select name="brand1" id="brand1" >
-                                 
+                                    @foreach($brand as $c)
+                                    <option value={{$c->id}}>{{$c->bname}} </option>
+                                   @endforeach  
                                 </select> 
-                           
-                                <script>
-                                    
-                           
-                            $( document ).ready(function() {
-                                var data = {
-                                url: "getbrand",
-                                type:'GET',
-                                success:function(result){
-                                    var array = [];
-                                    array=(result);
-                                    console.log( array );
-                                    console.log(array.length);
-                                    typeof(array);
-                                    var data=JSON.stringify(result);
-                                    console.log(data);
-                                    var obj=JSON.parse(result);
-                                    console.log(obj.length);
-                                    var len=obj.length;
-                                    var select = $("#brand1");
-                                    select.empty();
-                                    select.css("display:block");
-                                    var i=0;
-                                    for(i=0; i<len; i++)
-                                    {
-                            
-                                        console.log(obj[i].bname);
-                                        
-                                        // $('#brand1').html("<option>"+obj[i].bname+"</option>");
-                            
-                                        select.append($("<option />").val(obj[i].id).text(obj[i].bname));
-                                        console.log(select);
-                                    }
-                                    alert('alerted'+result);
-                                }
-                            }   
-                            $.ajax(data);
-                                console.log( "ready!" );
-                                
-                            });
-                            
-
-                            
-                              
-                                </script>
                                  </div>
                                 </div>
 
@@ -163,7 +114,7 @@
 
                                     <div class="mb-3 form-group p_star">
                                     <label for="formFile" class="form-control">Choose Item Image</label>
-                                    <input class="form-control" type="file" id="formFile">
+                                    <input class="form-control" type="file" id="formFile" name="image">
                                     </div>
                                    
                                     <div class="col-md-12 form-group p_star">

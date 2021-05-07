@@ -55,19 +55,7 @@
                                 {{csrf_field()}}
                                
 
-                                <div class="col-md-12 form-group p_star" style='max-width:40%'>
-                                
-                                <div class="box-select">
-                                <label class="form-control">Category:</label>
-                                
-                                <select name="select" id="select">
-                                @foreach($categorydata as $c)
-                                 <option value={{$c->id}}>{{$c->name}} </option>
-                                @endforeach
-                                 </select>
-                                 </div>  
-                                   
-                                    </div>
+                             
                                                                 
                                         <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="name" name="name" value=""

@@ -56,7 +56,7 @@ class loginactivity extends Controller
                     //echo "admin";
                     $i=login::select('name')->where('email','like',"$uname")->first();
                     // echo $i;
-                    return redirect('/AHome');
+                    echo "<script>alert('Successfully Logined,Welcome');window.location='/AHome';</script>";
                 
                 }
                 }

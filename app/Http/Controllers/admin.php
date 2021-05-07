@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\category;
+use App\Models\brand;
+use App\Models\item;
 
 class admin extends Controller
 {
@@ -12,10 +14,50 @@ class admin extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getbrand(Request $req)
+    {
+        $brand = brand::all();
+        echo $brand;
+        // $count=0;
+        // foreach($brand as $b)
+        // {
+        // $count=$count+1;
+        // }
+        
+        // $str="";
+
+        // for($i=0; $i<$count; $i++)
+        // {
+        //  $str .= "<option value='".$brand[$i]['id']."'>".$brand[$i]['bname']."</option> ";
+    
+        // }
+        // echo $str;
+        
+    }
+
+
     public function index()
     {
-        //
+        $categorydata = category::all();
+        return view ('ABrand',compact('categorydata'));
     }
+
+
+    public function index1()
+    {
+
+        $categorydata = category::all();
+        return view ('AItem',compact('categorydata'));
+    }
+    
+
+
+    // public function index2()
+    // {
+    //     $data = ['brand'=>brand::all()];
+    //     return view ('AItem',$data);
+    // }
+
 
     /**
      * Show the form for creating a new resource.
@@ -53,6 +95,37 @@ class admin extends Controller
         // echo "success";
 
     }
+
+    public function store1(Request $request)
+    {
+        $data=$request->input();
+       print_r($data);
+       
+        
+        $cname=$data['name'];
+        $desc=$data['desc'];
+        $cid=$data['select'];
+       
+        $this->validate($request,[
+            'name'=>'required',
+            'desc'=>'required'
+        ]);
+
+        $c = new brand();
+
+        $c->cid=$cid;
+        $c->bname=$cname;
+        $c->desc=$desc;
+
+        $c->save();
+        // return redirect('AHome');
+        echo "<script>alert('Successfully Added Brand');window.location='/AHome';</script>";
+        // echo "success";
+
+    }
+
+
+
 
     /**
      * Display the specified resource.

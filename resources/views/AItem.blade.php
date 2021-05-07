@@ -3,6 +3,7 @@
 
 @section('content')
 <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <header>
         
                     <!-- Mobile Menu -->
@@ -49,7 +50,8 @@
                                 
                                 <h3>Welcome Back Admin! <br>
                                     Add Item,  </h3>
-                                <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                                    
+                                <form class="row contact_form" action="" method="post" novalidate="novalidate">
                                 {{csrf_field()}}
                                
 
@@ -57,20 +59,73 @@
                                 <label class="form-control">Category:</label>
                                 <div class="box-select">
                                
-                                <select name="select" id="select">
-                                 <option value="Mobilecases">Mobile Cases</option>
-                                <option value="Glass">ScreenProtectors</option>  </select>
+                                <select name="select" id="select" onchange="getbrand()" >
+                                @foreach($categorydata as $c)
+                                 <option value={{$c->id}}>{{$c->name}} </option>
+                                @endforeach  
+                                </select>
                                  </div>
                                 </div>
 
-
+                                <!-- <button class="btn btn-primary">
+                                onclick="index1()"
                                 
+                                </button> -->
+                               
+                                <input type="text" class="form-control" id="csrf" name="name" value='@csrf'
+                                            placeholder="Item-Name" hidden>
+                 
+
+                                   
+
                                 <div class="col-md-12 form-group p_star">
                                 <label class="form-control">Brand:</label>
                                 <div class="box-select">
-                                <select name="select1" id="select1">
-                                 <option value="Mobilecases">Mobile Cases</option>
-                                <option value="Glass">ScreenProtectors</option>  </select>
+                                <select name="brand" id="brand" >
+                             
+                                </select> 
+                           
+                                <script>
+                                    
+
+                                // function getbrand(){
+                                //     var xhr=new XMLHttpRequest();
+                                //     var csrf=document.getElementById('csrf').value;
+                                //     var f=new FormData();
+                                //     f.append('X-CSRF-TOKEN','basith');
+                                    
+                                //     xhr.open('get','/getbrand');
+                                //     xhr.send(f);
+                                //     xhr.addEventListener('load',function(event){
+                                //         console.log(event.target.responseText);
+                                //         document.getElementById('brand').value=(event.target.responseText);
+                                //     });
+                                // }
+                            
+                            //  
+                           
+                            $( document ).ready(function() {
+                                var data = {
+                                url: "getbrand",
+                                type:'GET',
+                                success:function(result){
+                                    var array = [];
+                                    array.push(result);
+                                    console.log( array );
+                                    console.log(array.length);
+                                    alert('alerted'+result);
+                                    $('#brand').append(data);
+                                }
+                            }   
+                            $.ajax(data);
+                                console.log( "ready!" );
+                                
+                            });
+                            
+
+                            
+                              
+                                </script>
                                  </div>
                                 </div>
 

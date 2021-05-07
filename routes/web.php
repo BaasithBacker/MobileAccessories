@@ -117,14 +117,22 @@ Route::get('/ACategory', function () {
 
 Route::post('/ACategory1',[admin::class,'store']);
 
+Route::post('/ABrand1',[admin::class,'store1']);
 
-Route::get('/ABrand', function () {
-    return view('ABrand');
-});
+Route::get('/ABrand2',[admin::class,'index']);
 
-Route::get('/AItem', function () {
-    return view('AItem');
-});
+
+// Route::get('/ABrand', function () {
+//     return view('ABrand');
+// });
+
+Route::get('/AItem2',[admin::class,'index1']);
+
+Route::get('/AItem1',[admin::class,'index2']);
+
+// Route::get('/AItem', function () {
+//     return view('AItem');
+// });
 
 Route::get('/sessiondelete',function(){
     if(session()->has('sname'))
@@ -138,3 +146,7 @@ Route::get('/sessiondelete',function(){
 Route::get('/index', function () {
     return view('index');
 });
+
+Route::get('/getbrand',[admin::class,'getbrand']);
+
+

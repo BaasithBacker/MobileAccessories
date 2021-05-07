@@ -51,7 +51,7 @@
                     
                                 <h3>Welcome Back Admin! <br>
                                     Add Brand,  </h3>
-                                <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                                <form class="row contact_form" action="/ABrand1" method="post" novalidate="novalidate">
                                 {{csrf_field()}}
                                
 
@@ -59,9 +59,11 @@
                                 
                                 <div class="box-select">
                                 <label class="form-control">Category:</label>
+                                
                                 <select name="select" id="select">
-                                 <option value="Mobilecases">Mobile Cases</option>
-                                <option value="Glass">ScreenProtectors</option>
+                                @foreach($categorydata as $c)
+                                 <option value={{$c->id}}>{{$c->name}} </option>
+                                @endforeach
                                  </select>
                                  </div>  
                                    

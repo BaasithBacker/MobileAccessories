@@ -59,7 +59,7 @@
                                 <label class="form-control">Category:</label>
                                 <div class="box-select">
                                
-                                <select name="select" id="select" onchange="" >
+                                <select name="select" id="select"  >
                                 @foreach($categorydata as $c)
                                  <option value={{$c->id}}>{{$c->name}} </option>
                                 @endforeach  
@@ -131,7 +131,7 @@
             </div>
           
         </section>
-        <!--================login_part end =================-->
+        
 
     </main>
 

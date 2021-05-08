@@ -78,6 +78,11 @@
                                  </div>
                                 </div>
 
+
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="model" name="model" value=""
+                                        placeholder="Model-Name">
+                                </div>
                                                                 
                                         <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="name" name="name" value=""

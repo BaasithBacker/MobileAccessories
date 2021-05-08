@@ -126,6 +126,7 @@ class admin extends Controller
 
         $cid=$data['select'];
         $bid=$data['brand1'];
+        $imodel=$data['model'];
         $iname=$data['name'];
         $isize=$data['size'];
         $icolor=$data['color'];
@@ -138,6 +139,7 @@ class admin extends Controller
 
         $c->cid=$cid;
         $c->bid=$bid;
+        $c->imodel=$imodel;
         $c->iname=$iname;
         $c->isize=$isize;
         $c->icolor=$icolor;

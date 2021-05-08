@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->foreign('cid')->references('id')->on('categories')->onUpdate('cascade')->OnDelete('cascade');
             $table->unsignedBigInteger('bid');
             $table->foreign('bid')->references('id')->on('brands')->onUpdate('cascade')->OnDelete('cascade');
+            $table->string('imodel');
             $table->string('iname');
             $table->string('isize');
             $table->string('icolor');

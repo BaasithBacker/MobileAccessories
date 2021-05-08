@@ -134,6 +134,9 @@ class admin extends Controller
         $istock=$data['stock'];
         $isprice=$data['sprice'];
         $icprice=$data['cprice'];
+        $image=$req->file('image');
+        $name=$image->getClientOriginalName();
+        $image->move(public_path('assets/img/gallery'),$name); 
 
         $c = new item();
 
@@ -147,13 +150,42 @@ class admin extends Controller
         $c->istock=$istock;
         $c->isprice=$isprice;
         $c->icprice=$icprice;
+        $c->image=$name;
         echo "<script>alert('Successfully Added Item');window.location='/AHome';</script>";
 
         $c->save();
     }
 
+    public function deleteview($id)
+    {
+        $item=item::find($id);
+        return view('deleteitem',compact('item'));
+
+    }
+
+    public function destroyitem($id)
+    {
+        $item=item::find($id);
+
+        $item->delete();
+
+        return redirect('/viewitem');
+    }
+
+    public function viewitem()
+    {
+        $item=item::all();
+
+        return view('viewitem',compact('item'));
+    }
 
 
+    public function edititem($id)
+    {
+        $item=item::find($id);
+        return view('edititem',compact('item'));
+
+    }
     /**
      * Display the specified resource.
      *
@@ -183,9 +215,40 @@ class admin extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+
+    public function updateitem(Request $req, $id)
     {
-        //
+        $data=$req->input();
+
+        $c=item::find($id);
+
+        
+        $imodel=$data['model'];
+        $iname=$data['name'];
+        $isize=$data['size'];
+        $icolor=$data['color'];
+        $idesc=$data['desc'];
+        $istock=$data['stock'];
+        $isprice=$data['sprice'];
+        $icprice=$data['cprice'];
+        $image=$req->file('image');
+        $name=$image->getClientOriginalName();
+        $image->move(public_path('assets/img/gallery'),$name); 
+
+       
+        $c->imodel=$imodel;
+        $c->iname=$iname;
+        $c->isize=$isize;
+        $c->icolor=$icolor;
+        $c->idesc=$idesc;
+        $c->istock=$istock;
+        $c->isprice=$isprice;
+        $c->icprice=$icprice;
+        $c->image=$name;
+        echo "<script>alert('Successfully Updated Item');window.location='/AHome';</script>";
+
+        $c->save();
     }
 
     /**

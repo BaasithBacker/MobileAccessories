@@ -147,3 +147,13 @@ Route::get('/index', function () {
 Route::post('/storeitem',[admin::class,'storeitem']);
 
 
+route::get('/viewitem',[admin::class,'viewitem']);
+
+route::get('/edititem/{id}', [admin::class,'edititem']);
+ route::post('/itemprocess/{id}', [admin::class,'updateitem']);
+
+
+
+ route::get('/deleteitem/{id}', [admin::class,'deleteview']);
+
+route::post('/itemdelete/{id}',[admin::class,'destroyitem']);

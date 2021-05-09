@@ -1,4 +1,4 @@
-@extends('theme')
+@extends('theme4')
 
 
 @section('content')
@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Watch Shop</h2>
+                                <h2>Product Details</h2>
                             </div>
                         </div>
                     </div>
@@ -41,23 +41,21 @@
                 <div class="col-lg-12">
                 <div class="product_img_slide owl-carousel">
                     <div class="single_product_img">
-                        <img src="assets/img/gallery/gallery1.png" alt="#" class="img-fluid">
+                        <center>
+                        <img width="580" height="500" src="{{ URL ::asset('assets/img/gallery/'.$product->image)}}" class="img-fluid">
+                        <h3>Product-Name::{{ $product['iname'] }}</h3>
+                    </center>
                     </div>
-                    <div class="single_product_img">
-                        <img src="assets/img/gallery/gallery01.png" alt="#" class="img-fluid">
-                    </div>
-                    <div class="single_product_img">
-                        <img src="assets/img/gallery/gallery1.png" alt="#" class="img-fluid">
-                    </div>
+                   
                 </div>
                 </div>
                 <div class="col-lg-8">
                 <div class="single_product_text text-center">
-                    <h3>Foam filling cotton slow <br>
-                        rebound pillows</h3>
-                    <p>
-                        Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
-                    </p>
+                    <h3>Description::{{ $product['idesc'] }} <br>
+                        </h3>
+                        <h3>Rs.{{ $product['isprice'] }} <br>
+                        </h3>
+                    
                     <div class="card_area">
                         <div class="product_count_area">
                             <p>Quantity</p>
@@ -66,7 +64,7 @@
                                 <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
                                 <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                             </div>
-                            <p>$5</p>
+                            
                         </div>
                     <div class="add_to_cart">
                         <a href="#" class="btn_3">add to cart</a>

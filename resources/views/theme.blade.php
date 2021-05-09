@@ -47,7 +47,7 @@
                                     <li class="hot"><a href="#">Latest</a>
                                         <ul class="submenu">
                                             <li><a href="/shop"> Product list</a></li>
-                                            <li><a href="/product_details"> Product Details</a></li>
+                                            <li><a href="/productdetails"> Product Details</a></li>
                                         </ul>
                                     </li>
                              

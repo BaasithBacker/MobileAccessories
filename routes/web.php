@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginactivity;
 use App\Http\Controllers\admin;
+use App\Http\Controllers\customer;
+use App\Http\Controllers\product;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/shop', function () {
-    return view('shop');
-});
+// Route::get('/shop', function () {
+//     return view('shop');
+// });
 
 
 Route::get('/Login', function () {
@@ -61,9 +63,9 @@ Route::get('/elements', function () {
 
 
 
-Route::get('/product_details', function () {
-    return view('product_details');
-});
+// Route::get('/product_details', function () {
+//     return view('product_details');
+// });
 
 
 Route::get('/Register', function () {
@@ -149,6 +151,12 @@ Route::post('/storeitem',[admin::class,'storeitem']);
 
 route::get('/viewitem',[admin::class,'viewitem']);
 
+route::get('/shop',[customer::class,'viewproduct']);
+
+route::get('/CHome',[customer::class,'viewproducthome']);
+
+route::get('productdetails/{id}',[product::class,'productdetails']);
+
 route::get('/edititem/{id}', [admin::class,'edititem']);
  route::post('/itemprocess/{id}', [admin::class,'updateitem']);
 
@@ -157,3 +165,4 @@ route::get('/edititem/{id}', [admin::class,'edititem']);
  route::get('/deleteitem/{id}', [admin::class,'deleteview']);
 
 route::post('/itemdelete/{id}',[admin::class,'destroyitem']);
+

@@ -155,6 +155,7 @@ route::get('/shop',[customer::class,'viewproduct']);
 
 route::get('/CHome',[customer::class,'viewproducthome']);
 
+
 route::get('productdetails/{id}',[product::class,'productdetails']);
 
 route::get('/edititem/{id}', [admin::class,'edititem']);

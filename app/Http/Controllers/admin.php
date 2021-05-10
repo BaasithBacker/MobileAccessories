@@ -223,7 +223,8 @@ class admin extends Controller
 
         $c=item::find($id);
 
-        
+        $cid=$data['select'];
+        $bid=$data['brand1'];
         $imodel=$data['model'];
         $iname=$data['name'];
         $isize=$data['size'];
@@ -236,8 +237,9 @@ class admin extends Controller
         $name=$image->getClientOriginalName();
         $image->move(public_path('assets/img/gallery'),$name); 
 
-       
-        $c->imodel=$imodel;
+        
+        $c->cid=$cid;
+        $c->bid=$bid;
         $c->iname=$iname;
         $c->isize=$isize;
         $c->icolor=$icolor;

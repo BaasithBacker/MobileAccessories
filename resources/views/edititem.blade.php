@@ -1,4 +1,4 @@
-@extends('theme4')
+@extends('theme2')
 
 @section('content')
 
@@ -20,6 +20,7 @@
              <input value="{{   $item->bid }}" name="bid" type="text" class="form-control">
             </td>
         </tr> --}}
+        
 
      <tr>
          <td> MODEL </td>

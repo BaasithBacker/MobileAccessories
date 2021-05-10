@@ -1,4 +1,6 @@
-@extends('theme4')
+
+  
+@extends('theme3')
 
 
 @section('content')
@@ -42,8 +44,8 @@
                 <div class="product_img_slide owl-carousel">
                     <div class="single_product_img">
                         <center>
-                        <img width="580" height="500" src="{{ URL ::asset('assets/img/gallery/'.$product->image)}}" class="img-fluid">
-                        <h3>Product-Name::{{ $product['iname'] }}</h3>
+                        <img width="200" height="300" src="{{ URL ::asset('assets/img/gallery/'.$product->image)}}" class="img-fluid">
+                        <h3>{{ $product['iname'] }}</h3>
                     </center>
                     </div>
                    
@@ -51,8 +53,8 @@
                 </div>
                 <div class="col-lg-8">
                 <div class="single_product_text text-center">
-                    <h3>Description::{{ $product['idesc'] }} <br>
-                        </h3>
+                    {{-- <h3>Description{{ $product['idesc'] }} <br>
+                        </h3> --}}
                         <h3>Rs.{{ $product['isprice'] }} <br>
                         </h3>
                     
@@ -69,12 +71,15 @@
                     <div class="add_to_cart">
                         <a href="#" class="btn_3">add to cart</a>
                     </div>
+                    
                     </div>
                 </div>
                 </div>
+            
             </div>
             </div>
         </div>
+        
         <!--================End Single Product Area =================-->
         <!-- subscribe part here -->
         <section class="subscribe_part section_padding">
@@ -97,3 +102,4 @@
     </main>
     
 @endsection
+

@@ -46,6 +46,7 @@
                         <center>
                         <img width="200" height="300" src="{{ URL ::asset('assets/img/gallery/'.$product->image)}}" class="img-fluid">
                         <h3>{{ $product['iname'] }}</h3>
+                        <h3>{{ $product['icolor'] }}</h3>
                     </center>
                     </div>
                    
@@ -53,10 +54,11 @@
                 </div>
                 <div class="col-lg-8">
                 <div class="single_product_text text-center">
-                    {{-- <h3>Description{{ $product['idesc'] }} <br>
-                        </h3> --}}
-                        <h3>Rs.{{ $product['isprice'] }} <br>
-                        </h3>
+                    <h5>CostPrice:{{ $product['icprice'] }} <br>
+                        </h5>
+                       
+                        <h4>SellingPrice: Rs.{{ $product['isprice'] }} <br>
+                        </h4>
                     
                     <div class="card_area">
                         <div class="product_count_area">

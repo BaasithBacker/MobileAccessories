@@ -43,22 +43,25 @@
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Total</th>
+                    <th scope="col">Delete</th>
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($item as $i)
                   <tr>
                     <td>
+                      
                       <div class="media">
                         <div class="d-flex">
-                          <img src="assets/img/gallery/card1.png" alt="" />
+                          <img width="150" height="100" src="{{ URL ::asset('assets/img/gallery/'.$i->image) }}" />
                         </div>
                         <div class="media-body">
-                          <p>Minimalistic shop for multipurpose use</p>
+                          <p>{{ $i->iname }}</p>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <h5>$360.00</h5>
+                      <h5>Rs.{{ $i->isprice }}</h5>
                     </td>
                     <td>
                       <div class="product_count">
@@ -70,41 +73,22 @@
                     <td>
                       <h5>$720.00</h5>
                     </td>
-                  </tr>
-                  <tr>
+
                     <td>
-                      <div class="media">
-                        <div class="d-flex">
-                          <img src="assets/img/gallery/card2.png" alt="" />
-                        </div>
-                        <div class="media-body">
-                          <p>Minimalistic shop for multipurpose use</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <h5>$360.00</h5>
-                    </td>
-                    <td>
-                      <div class="product_count">
-                          <span class="input-number-decrement"> <i class="ti-minus"></i></span>
-                          <input class="input-number" type="text" value="1" min="0" max="10">
-                          <span class="input-number-increment"> <i class="ti-plus"></i></span>
-                      </div>
-                    </td>
-                    <td>
-                      <h5>$720.00</h5>
+                      <a href="/removecart/{{ $i->cart_id }}" class="btn tn-primary">Delete</a>
                     </td>
                   </tr>
+                  @endforeach
+                  
                   <tr class="bottom_button">
                     <td>
-                      <a class="btn_1" href="#">Update Cart</a>
+                      <a class="btn_1" href="/shop">Update Cart</a>
                     </td>
                     <td></td>
                     <td></td>
                     <td>
                       <div class="cupon_text float-right">
-                        <a class="btn_1" href="#">Close Coupon</a>
+                        <a class="btn_1-disabled" href="#">Close Coupon</a>
                       </div>
                     </td>
                   </tr>

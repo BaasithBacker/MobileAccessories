@@ -10,7 +10,7 @@
     
     <header>
      
-                        
+        
                     <!-- Mobile Menu -->
                     <div class="col-12">
                         <div class="mobile_menu d-block d-lg-none"></div>
@@ -70,10 +70,12 @@
                             </div>
                             
                         </div>
-                    <div class="add_to_cart">
-                        <a href="#" class="btn_3">add to cart</a>
-                    </div>
-                    
+                        <form action="/addtocart" method="POST">
+                            @csrf
+                        <input type="hidden" name="item" value="{{ $product['id'] }}">
+                        <br>
+                        <button class="btn btn-primary">add to cart</button>
+                        </form>
                     </div>
                 </div>
                 </div>

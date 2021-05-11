@@ -73,7 +73,7 @@
                                     </div>
                                 </li>
                                 <li> <a href="/Login"><span class="flaticon-user"></span></a></li>
-                                <li><a href="/cart"><span class="flaticon-shopping-cart"></span></a> </li>
+                                {{-- <li><a href="/cart"><span class="flaticon-shopping-cart"></span></a> </li> --}}
                             </ul>
                         </div>
                     </div>

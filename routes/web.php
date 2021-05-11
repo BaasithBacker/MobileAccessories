@@ -37,9 +37,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+// Route::get('/cart', function () {
+//     return view('cart');
+// });
 
 
 Route::get('/shop', function () {
@@ -159,7 +159,7 @@ route::get('/CHome',[customer::class,'viewproducthome']);
 route::get('productdetails/{id}',[product::class,'productdetails']);
 
 route::get('/edititem/{id}', [admin::class,'edititem']);
- route::post('/itemprocess/{id}', [admin::class,'updateitem']);
+route::post('/itemprocess/{id}', [admin::class,'updateitem']);
 
 
 
@@ -167,3 +167,8 @@ route::get('/edititem/{id}', [admin::class,'edititem']);
 
 route::post('/itemdelete/{id}',[admin::class,'destroyitem']);
 
+route::post('/addtocart',[product::class,'addcart']);
+
+route::get('/cart',[product::class,'cartlist']);
+
+route::get('removecart/{id}',[product::class,'destroy']);

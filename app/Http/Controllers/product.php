@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\category;
 use App\Models\brand;
 use App\Models\item;
+use App\Models\cart;
+use Illuminate\support\Facades\DB;
+use Session;
 
 class product extends Controller
 {
@@ -14,6 +17,24 @@ class product extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function addcart(Request $req)
+    {
+       if($req->session()->has('sname'))
+       {
+           $c = new cart;
+          
+           $c->productid=$req->item;
+           $c->userid=session('sname')->id;
+        //    echo "$c";
+           $c->save();
+           echo "<script>alert('product added Successfully to the cart');window.location='/CHome';</script>";
+       }
+       else
+       {
+           return redirect('/Login');
+       }
+    }
 
     public function productdetails($id)
     {
@@ -90,6 +111,21 @@ class product extends Controller
      */
     public function destroy($id)
     {
-        //
+        cart::destroy($id);
+    echo "<script>alert('Item removed Successfully from the cart');window.location='/cart';</script>";
+    }
+
+    function cartlist()
+    {
+        $userid=session::get('sname')['id'];
+        $item=DB::table('carts') 
+        ->join('items','carts.productid','=','items.id')
+        ->where('carts.userid',$userid)
+        ->select('items.*','carts.id as cart_id')
+        ->get();
+
+        return view('cart',['item'=>$item]);
     }
 }
+
+

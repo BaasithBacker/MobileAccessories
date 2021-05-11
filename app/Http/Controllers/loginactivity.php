@@ -46,15 +46,16 @@ class loginactivity extends Controller
                 //echo $ut->usertype;
                 if($ut->usertype == 'customer')
                 {
-                    $i=login::select('name')->where('email','like',"$uname")->first();
+                    $i=login::select('name','id')->where('email','like',"$uname")->first();
                     $request->session()->put('sname',$i);
-                   //echo "logined";
+                //    echo "logined";
+                //    echo session('sname')->id;
                    echo "<script>alert('Successfully Logined,Welcome');window.location='/CHome';</script>"; 
                 }
                 else if($ut->usertype=='admin')
                 {
                     //echo "admin";
-                    $i=login::select('name')->where('email','like',"$uname")->first();
+                    // $i=login::select('id')->where('id','like',"$id")->first();
                     // echo $i;
                     echo "<script>alert('Successfully Logined,Welcome');window.location='/AHome';</script>";
                 

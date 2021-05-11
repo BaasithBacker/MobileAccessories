@@ -133,14 +133,18 @@ Route::get('/AItem2',[admin::class,'index']);
     
 
 
-Route::get('/sessiondelete',function(){
-    if(session()->has('sname'))
-    {
-        session()->pull('sname');
-    }
-    return view('/index');
-});
+// Route::get('/sessiondelete',function(){
+//     if(session()->has('sname'))
+//     {
+//         session()->pull('sname');
+//     }
+//     return view('/index');
+// });
 
+route::get('/logout',function(){
+    Session::forget('sname');
+    return redirect('/index');
+});
 
 Route::get('/index', function () {
     return view('index');
@@ -172,3 +176,5 @@ route::post('/addtocart',[product::class,'addcart']);
 route::get('/cart',[product::class,'cartlist']);
 
 route::get('removecart/{id}',[product::class,'destroy']);
+
+

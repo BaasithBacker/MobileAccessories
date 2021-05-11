@@ -21,12 +21,15 @@ class product extends Controller
 
     public function addcart(Request $req)
     {
+      
        if($req->session()->has('sname'))
-       {
+       {    $qty=request('qty');
+        // echo "$qty";
            $c = new cart;
           
            $c->productid=$req->item;
            $c->userid=session('sname')->id;
+           $c->qty=$qty;
         //    echo "$c";
            $c->save();
            echo "<script>alert('product added Successfully to the cart');window.location='/CHome';</script>";
@@ -127,6 +130,19 @@ class product extends Controller
 
         return view('cart',['item'=>$item]);
     }
+
+    // function checkout(){
+    //     $userid=session::get('sname')['id'];
+    //    $total= $item=DB::table('carts') 
+    //     ->join('items','carts.productid','=','items.id')
+    //     ->where('carts.userid',$userid)
+    //     ->select('items.*','carts.id as cart_id')
+        
+    //     ->get();
+        
+    //     // return view('cart',['item'=>$item]);
+    //     return view('/checkout',['total'=>$total]);
+    // }
 }
 
 

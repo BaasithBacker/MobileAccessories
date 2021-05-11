@@ -53,7 +53,7 @@
                                   
                                     <li><a href="#">Pages</a>
                                         <ul class="submenu">
-                                            <li><a href="/sessiondelete">Logout</a></li>
+                                            <li><a href="/logout">Logout</a></li>
                                             <li><a href="/cart">Cart</a></li>
                                            
                                             {{-- <li><a href="/confirmation">Confirmation</a></li>
@@ -72,7 +72,7 @@
                                         <span class="flaticon-search"></span>
                                     </div>
                                 </li>
-                                <li> <a href="/sessiondelete"><span class="flaticon-user"></span></a></li>
+                                <li> <a href="/logout"><span class="flaticon-user"></span></a></li>
                                 <li><a href="/cart"><span class="flaticon-shopping-cart"></span></a> </li>
                             </ul>
                         </div>

@@ -64,7 +64,7 @@
                                     </li>
                                     
 
-                                    <li><a href="/sessiondelete">Logout</a></li>
+                                    <li><a href="/logout">Logout</a></li>
                                 </ul>
                             </nav>
                         </div>

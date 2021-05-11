@@ -59,19 +59,19 @@
                        
                         <h4>SellingPrice: Rs.{{ $product['isprice'] }} <br>
                         </h4>
-                    
+                        <form action="/addtocart" method="POST">
+                            @csrf
                     <div class="card_area">
                         <div class="product_count_area">
                             <p>Quantity</p>
                             <div class="product_count d-inline-block">
                                 <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                                <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
+                                <input name="qty" class="product_count_item input-number" type="text" value="1" min="1" max="10">
                                 <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                             </div>
                             
                         </div>
-                        <form action="/addtocart" method="POST">
-                            @csrf
+                        
                         <input type="hidden" name="item" value="{{ $product['id'] }}">
                         <br>
                         <button class="btn btn-primary">add to cart</button>

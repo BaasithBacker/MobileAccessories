@@ -98,7 +98,13 @@
                                         <img width="361" height="380" src="{{ URL ::asset('assets/img/gallery/'.$i->image)}}">
                                         <div class="img-cap">
                                         </a>
-                                            <span><a href='/cart'>Add to cart</a></span>
+                                        <form action="/addtocart" method="POST">
+                                            {{-- <span><a href=''>Add to cart</a></span> --}}
+                                            @csrf
+                                            <input type="hidden" name="item" value="{{ $i['id'] }}">
+                                            <br>
+                                            <span><button class="btn btn-danger">add to cart</button> </span>
+                                        </form>
                                         </div>
                                         <div class="favorit-items">
                                             <span class="flaticon-heart"></span>

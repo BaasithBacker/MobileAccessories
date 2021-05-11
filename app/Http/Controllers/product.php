@@ -17,6 +17,7 @@ class product extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+ 
 
     public function addcart(Request $req)
     {

@@ -35,7 +35,7 @@
                     <div class="menu-wrapper">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="../assets/img/logo/logo.png" alt=""></a>
+                            <a href="/CHome"><img src="../assets/img/logo/logo.png" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">
@@ -47,7 +47,7 @@
                                     <li class="hot"><a href="#">Latest</a>
                                         <ul class="submenu">
                                             <li><a href="/shop"> Product list</a></li>
-                                            <li><a href="/product_details"> Product Details</a></li>
+                                            {{-- <li><a href="/product_details"> Product Details</a></li> --}}
                                         </ul>
                                     </li>
                                   
@@ -56,8 +56,8 @@
                                             <li><a href="/sessiondelete">Logout</a></li>
                                             <li><a href="/cart">Cart</a></li>
                                            
-                                            <li><a href="/confirmation">Confirmation</a></li>
-                                            <li><a href="/checkout">Product Checkout</a></li>
+                                            {{-- <li><a href="/confirmation">Confirmation</a></li>
+                                            <li><a href="/checkout">Product Checkout</a></li> --}}
                                         </ul>
                                     </li>
                                     
